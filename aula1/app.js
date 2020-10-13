@@ -15,7 +15,7 @@ console.log(arr2);
 //Vai ficar [5, 7, 9, 6]
 
 //Ex 3
-var arr3 = [2, 3, 4];
+let arr3 = [2, 3, 4];
 arr3.unshift(0, 1);
 arr3.push(5, 6, 7);
 console.log(arr3);
