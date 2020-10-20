@@ -29,6 +29,8 @@ const Inverso = (array) => {
 console.log(Inverso(numeros3));
 
 //Ex4----------------------------------------
+//O que fiz no ex1 serve para aqui, so... yeah ... está igual ¯\_(ツ)_/¯
+
 let numeros4 = [420, 96, 1000, -2, 43, 2020, 9];
 
 const Crescente2 = (array) => {
