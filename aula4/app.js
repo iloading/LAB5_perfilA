@@ -121,15 +121,7 @@ const ordenar = (array) => {
   array.sort((a, b) => {
     if (a.nota === b.nota) {
       //se as notas forem iguais
-      return a.idade < b.idade ? -1 : a.idade > b.idade ? 1 : {};
-      //Tradução:
-      //   if (a.idade < b.idade) {
-      //     // se a idade de a for menor que b
-      //     return b.idade - a.idade;
-      //   } else if (a.idade > b.idade) {
-      //     // se a idade de b for menor que a
-      //     return b.idade - a.idade;
-      //   }
+      return a.idade - b.idade;
     } else {
       //Se as notas forem diferentes
       return b.nota - a.nota;
