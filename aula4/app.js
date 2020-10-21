@@ -95,12 +95,7 @@ function Receita(nome, numeroPessoas, ingredientes) {
     (this.numeroPessoas = numeroPessoas),
     (this.ingredientes = ingredientes);
 }
-let boloChocolate = new Receita("Bolo de Chocolate", 1, [
-  "farinha",
-  "açucar",
-  "chocolate",
-  "fermento",
-]);
+let boloChocolate = new Receita("Bolo de Chocolate", 1, ["farinha","açucar","chocolate","fermento"]);
 // object Destructuring
 let { ingredientes } = boloChocolate;
 ingredientes.map((item) => console.log(item));
