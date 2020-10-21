@@ -1,41 +1,140 @@
-//Ex1----------------------------------------
-let numeros = [420, 96];
+//Ex1
+const numero = 1;
+//numero= 2; //dá erro "Assignment to constant variable" não se pode mudar o valor de uma constante
 
-const Crescente = (array) => {
-  array.sort((a, b) => a - b);
-  return array;
+//Ex2
+// var vs let
+
+//ambos podem ter scope global:
+var globalVar = 1;
+let globalLet = 1;
+
+const funcao = () => {
+  //globalVar  consegue ser lido dentro e fora da funcao
+  //globalLet  consegue ser lido dentro e fora da funcao
 };
+funcao();
 
-console.log(Crescente(numeros));
+//E quando é declarado dentro da função?
 
-//Ex2----------------------------------------
-let numeros2 = [420, 96, 500];
-
-const Decrescente = (array) => {
-  array.sort((a, b) => b - a);
-  return array;
+const funcao2 = () => {
+  var funcaoVar = 1;
+  let funcaoLet = 1;
+  //funcaoVar consegue ser lido dentro da mesma funcao
+  //funcaoLet consegue ser lido dentro da mesma funcao
 };
+funcao2();
+//funcaoVar Não consegue ser lido fora da função
+//funcaoLet Não consegue ser lido fora da função
 
-console.log(Decrescente(numeros2));
+//Mas funcionam de maneira diferente relativamente ao scope em block:
+{
+  var blockVar = 1;
+  let blockLet = 1;
+  //blockVar consegue ser lido dentro do block
+  //blockLet consegue ser lido dentro do block
+}
+//blockVar consegue ser lido fora do block
+//blockLet Não consegue ser lido fora do block
 
-//Ex3----------------------------------------
-let numeros3 = [1, 5, 3, 4];
+//Por isso na caso de termos variaveis com o mesmo nome dentro e fora de blocks, a lógica funcionará da seguinte maneira:
 
-const Inverso = (array) => {
-  array.reverse();
-  return array;
+var x = 0;
+
+{
+  var x = 5;
+  //aqui x = 5
+}
+//aqui x = 5
+
+//no entanto:
+var z = 10;
+{
+  let z = 0;
+  // aqui z = 0
+}
+// aqui z = 10
+
+//Ex3
+var nome = "Samuel";
+console.log("o meu nome é" + nome);
+
+//passa a ser:
+console.log(`o meu nome é  ${nome} ou "Sam"`);
+
+//assim podemos usar "" e '' sem que as mesmas interfiram com a concatenação de strings/variaveis
+
+//Ex4
+function teste(num = 1) {
+  //sem arrow function
+  //o default, caso não seja passado nada, num = 1
+  console.log(typeof num);
+  console.log(num);
+}
+
+teste(); // 'number' (num é definido para 1)
+teste(undefined); // 'number' (num é definido para 1 também)
+teste(""); // 'string' (num é definido para '')
+teste(null); // 'object' (num é definido para null)
+
+//Ex5 igual mas com arrow function
+const teste2 = (num = 1) => {
+  //o default, caso não seja passado nada, num = 1
+  console.log(typeof num);
+  console.log(num);
 };
+teste2(); // 'number' (num é definido para 1)
+teste2(undefined); // 'number' (num é definido para 1 também)
+teste2(""); // 'string' (num é definido para '')
+teste2(null); // 'object' (num é definido para null)
 
-console.log(Inverso(numeros3));
+//Ex6
 
-//Ex4----------------------------------------
-//O que fiz no ex1 serve para aqui, so... yeah ... está igual ¯\_(ツ)_/¯
+function Receita(nome, numeroPessoas, ingredientes) {
+  (this.nome = nome),
+    (this.numeroPessoas = numeroPessoas),
+    (this.ingredientes = ingredientes);
+}
+let boloChocolate = new Receita("Bolo de Chocolate", 1, [
+  "farinha",
+  "açucar",
+  "chocolate",
+  "fermento",
+]);
+// object Destructuring
+let { ingredientes } = boloChocolate;
+ingredientes.map((item) => console.log(item));
+//OU
 
-let numeros4 = [420, 96, 1000, -2, 43, 2020, 9];
+boloChocolate.ingredientes.map((item) => console.log(item));
 
-const Crescente2 = (array) => {
-  array.sort((a, b) => a - b);
-  return array;
+//Ex7
+var aprovados = [
+  { candidato: "Maira Soares", nota: 16, idade: 17 },
+  { candidato: "Manuel Marques", nota: 14, idade: 20 },
+  { candidato: "Nuno Gomes", nota: 15, idade: 19 },
+  { candidato: "Patrícia Oliveira", nota: 14, idade: 21 },
+  { candidato: "Adriana Pedrosa", nota: 17, idade: 22 },
+];
+
+const ordenar = (array) => {
+  array.sort((a, b) => {
+    if (a.nota === b.nota) {
+      //se as notas forem iguais
+      return a.idade < b.idade ? -1 : a.idade > b.idade ? 1 : {};
+      //Tradução:
+      //   if (a.idade < b.idade) {
+      //     // se a idade de a for menor que b
+      //     return b.idade - a.idade;
+      //   } else if (a.idade > b.idade) {
+      //     // se a idade de b for menor que a
+      //     return b.idade - a.idade;
+      //   }
+    } else {
+      //Se as notas forem diferentes
+      return b.nota - a.nota;
+    }
+  });
 };
-
-console.log(Crescente2(numeros4));
+ordenar(aprovados);
+console.log(aprovados);
