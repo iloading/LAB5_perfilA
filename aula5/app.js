@@ -66,7 +66,7 @@ const multiplicar2 = (...numeros) => {
   return resultado;
 };
 
-console.log(multiplicar2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)); //720
+console.log(multiplicar2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)); //3628800
 
 //Ex5
 let arr1 = [1, 2, 3];
