@@ -132,7 +132,7 @@ console.log(circulo1.area); // Output:78.53981633974483
 
 //Ex7
 //Após rever este código, cheguei à conclusão que sou retardado :D 
-//Podem ser retardados como eu e fazer desta maneira ou simplesmente definir os parametros de entrada sendo o comprimento e a largura do retângulo :_)
+//Podem ser retardados como eu e fazer desta maneira ou simplesmente definir os parametros de entrada como sendo o comprimento e a largura do retângulo :_)
 class Retanculo {
   constructor(p1, p2, p3, p4) {
     //Para verificar que as coordenadas formam um retângulo:
