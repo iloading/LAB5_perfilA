@@ -222,7 +222,8 @@ class Poligono {
   }
   get perimetro() {
     //Primeiro temos que encontrar o Centro do Poligono
-    //Então fazemos ordenamos o array em x e em ythis.pontos.sort((a, b) => a.y - b.y);
+    //Então fazemos ordenamos o array em x e em y
+    this.pontos.sort((a, b) => a.y - b.y);
     let centroY =
       (this.pontos[0].y + this.pontos[this.pontos.length - 1].y) / 2;
 
