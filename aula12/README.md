@@ -11,6 +11,6 @@ OU:
 -> fazem download do meu código para uma pasta, abrem com o editor (PHPStorm / VSCode / outro) e escrevem na consola npm install, isto vai ler tudo o que está no ficheiro package.json e instalar na vossa pasta
 
 
-**Alguma dúvida o erro, avisem**
+**Alguma dúvida ou erro, avisem**
 
 
