@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+.calculadora {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.display {
+  font-size: 4rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+  height: 15rem;
+  border: 1px darkgrey solid;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+.teclas {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.tecla {
+  font-size: 3rem;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 22%;
+  height: 10rem;
+  margin: 0.2rem;
+  border: 1px darkgrey solid;
+  cursor: pointer;
+}
+.tecla:hover {
+  background-color: lightgray;
+}
+.tecla:active {
+  background-color: darkgrey;
+}
+.expressao {
+  font-size: 3rem;
+  display: flex;
+  align-self: center;
+  color: rgb(80, 80, 80);
+}
+.resultado {
+  padding-left: 5rem;
+  display: flex;
+  align-self: flex-end;
+}
