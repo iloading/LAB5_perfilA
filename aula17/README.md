@@ -1,6 +1,3 @@
-# Já tinha resolvido este ex na aula 13, o código está igual a essa aula
-
-**A pesquisa não está feita apenas para nºTel. Qualquer dos parâmetros podem ser pesquisados**
 
 # Estamos a usar React
 
