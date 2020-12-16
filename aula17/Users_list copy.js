@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import UserItem from "./UserItem";
 
 const UsersList = ({ pesquisa }) => {
   const [resultadosAPI, setResultadosAPI] = useState([]);
 
-  const API = `https://api.randomuser.me/?nat=${pesquisa || "US"}&results=${5}`;
+  const API = `https://api.randomuser.me/?nat=${
+    pesquisa || "US"
+  }&results=${10}`;
 
   let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
@@ -33,29 +35,25 @@ const UsersList = ({ pesquisa }) => {
       request.send();
     });
   }
-  useEffect(() => {
-    get(API).then(
-      //resolve
-      function (response) {
-        if (pesquisa !== "") {
-          let x = response.filter((item) => item.nat === pesquisa);
-          setResultadosAPI(x);
-        }
-      },
-      //reject
-      function (error) {
-        console.error("Failed!", error);
+  var x = [];
+  get(API).then(
+    //resolve
+    function (response) {
+      if (pesquisa !== "") {
+        x = response.filter((item) => item.nat === pesquisa);
+        console.log(x);
       }
-    );
-  }, [pesquisa]);
-
-  return (
-    <ul className="col-md-4 list-group">
-      {console.log(resultadosAPI)}
-      {resultadosAPI.map((user) => (
-        <UserItem user={user} key={user.login.uuid} />
-      ))}
-    </ul>
+    },
+    //reject
+    function (error) {
+      console.error("Failed!", error);
+    }
   );
+
+  return <ul className="col-md-4 list-group">{x}</ul>;
 };
 export default UsersList;
+
+// resultadosAPI.map((user) => (
+//             <UserItem user={user.name.first} key={user.login.uuid} />
+//           ))

@@ -1,0 +1,28 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lista {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.todos {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+.video {
+  margin: 1rem;
+  cursor: pointer;
+  display: flex;
+
+  align-items: center;
+}
+.frame {
+  display: flex;
+
+  align-items: center;
+}
